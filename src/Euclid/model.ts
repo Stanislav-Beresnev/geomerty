@@ -1,29 +1,25 @@
 import { DefineModelRepositoryError } from "./errors";
-import { Repository, type Continuator } from "./model.types";
+import type { ModelDefinitionArgs } from "./model.types";
+import { TypeRepository } from "./repository";
+import { RepositoryKind } from "./repository.types";
 
-export const type: Continuator = (name: string) => {
+export const type = (itemName: string): ModelDefinitionArgs => {
   return {
-    [Repository.Type]: {
-      [name]: {
-        is() {},
-        with() {},
-        where() {},
-      },
-    },
+    repository: RepositoryKind.Type,
+    itemName,
   };
 };
 
 export class Model {
-  repos: ReturnType<Continuator> = {};
-  define(args: ReturnType<Continuator>) {
-    for (let repositoryName in args) {
-      switch (repositoryName) {
-        case Repository.Type:
-          this.repos[repositoryName] = args[repositoryName];
-          break;
-        default:
-          throw new DefineModelRepositoryError();
-      }
+  typeRepository = new TypeRepository();
+
+  define({ repository, itemName }: ModelDefinitionArgs) {
+    switch (repository) {
+      case RepositoryKind.Type:
+        this.typeRepository.define(itemName);
+        break;
+      default:
+        throw new DefineModelRepositoryError(repository);
     }
   }
 }

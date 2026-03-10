@@ -1,11 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`model > define type 1`] = `
-{
-  "Test": {
-    "is": [Function],
-    "where": [Function],
-    "with": [Function],
-  },
-}
-`;
+exports[`model > define unexpectable 1`] = `[DefineModelRepositoryError: Репозиторий undefined не является допустимым]`;
+
+exports[`model > define unexpectable 2`] = `[DefineModelRepositoryError: Репозиторий absurd не является допустимым]`;
