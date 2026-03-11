@@ -1,5 +1,5 @@
+import { Model, type } from "Euclid/model/model";
 import { describe, expect, it } from "vitest";
-import { Model, type } from "../model";
 
 describe("model", () => {
   it("define unexpectable", () => {

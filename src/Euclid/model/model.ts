@@ -1,7 +1,7 @@
+import { RepositoryKind } from "Euclid/repository/repository.types";
 import { DefineModelRepositoryError } from "../errors";
 import type { ModelDefinitionArgs } from "./model.types";
-import { TypeRepository } from "../repository/typeRepository";
-import { RepositoryKind } from "../repository/repository.types";
+import { TypeRepository } from "Euclid/repository/typeRepository";
 
 export const type = (itemName: string): ModelDefinitionArgs => {
   return {
