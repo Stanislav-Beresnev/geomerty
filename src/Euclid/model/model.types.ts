@@ -1,4 +1,4 @@
-import type { RepositoryKind } from "./repository.types";
+import type { RepositoryKind } from "./repository/repository.types";
 
 export interface ModelDefinitionArgs {
   repository: RepositoryKind;

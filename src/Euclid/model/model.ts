@@ -1,7 +1,7 @@
-import { DefineModelRepositoryError } from "./errors";
+import { DefineModelRepositoryError } from "../errors";
 import type { ModelDefinitionArgs } from "./model.types";
-import { TypeRepository } from "./repository";
-import { RepositoryKind } from "./repository.types";
+import { TypeRepository } from "../repository/typeRepository";
+import { RepositoryKind } from "../repository/repository.types";
 
 export const type = (itemName: string): ModelDefinitionArgs => {
   return {
