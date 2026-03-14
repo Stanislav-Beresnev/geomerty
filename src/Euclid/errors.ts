@@ -1,8 +1,8 @@
 import { i18n } from "src/utils/i18n";
 
-export class DefineModelRepositoryError extends Error {
+export class InvalidRepositoryError extends Error {
   code: string = "001";
-  name: string = "DefineModelRepositoryError";
+  name: string = "InvalidRepositoryError";
   constructor(repository: string) {
     super();
     this.message = i18n(`Репозиторий ${repository} не является допустимым`);

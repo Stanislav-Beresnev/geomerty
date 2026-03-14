@@ -1,5 +1,5 @@
 import { RepositoryKind } from "Euclid/repository/repository.types";
-import { DefineModelRepositoryError } from "../errors";
+import { InvalidRepositoryError } from "../errors";
 import type { ModelDefinitionArgs } from "./model.types";
 import { TypeRepository } from "Euclid/repository/typeRepository";
 
@@ -19,7 +19,7 @@ export class Model {
         this.typeRepository.define(itemName);
         break;
       default:
-        throw new DefineModelRepositoryError(repository);
+        throw new InvalidRepositoryError(repository);
     }
   }
 }
